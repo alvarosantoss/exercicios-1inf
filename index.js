@@ -3,7 +3,7 @@ const produto= "Notebook Gamer"
 const preco= 4500
 const quantidade= 2
 const estoque= 10
-const subtotal= preco*quantidade
+const subtotal= preco * quantidade
 const valorPago= 9000
 const desconto="10%"
 let descontoPercentual= 0
@@ -41,7 +41,7 @@ subtotal;${subtotal}
 desconto;${desconto}
 valor do desconto;${valorDesconto}
 valor final;${valorFinal}
-situação do estoque;{estoqueDisponivel}
+situação do estoque;${estoqueDisponivel}
 valor pago;${valorPago}
 situação de pagamento;${pagamentoStatus}
 troco;${troco}
