@@ -2,25 +2,36 @@ const cliente= "Lucas Almeida"
 const produto= "Notebook Gamer"
 const preco= 4500
 const quantidade= 2
+const estoque= 10
+const subtotal= preco*quantidade
 const valorPago= 9000
-const subtotal= (quantidade*preco)
-const descontoPercentual= "10%"
+let descontoPercentual= 0
+if (subtotal>=1000) {
+    descontoPercentual= 10
+}
 const valorDesconto=(subtotal*descontoPercentual/100)
 const valorFinal=(subtotal-valorDesconto)
-const troco= (valorPago-valorFinal)
 
-if(quantidade>=2) {
-    console.log("Estoque Disponivel")
+let troco= "Aguardando"
+let statusPedido= "Aguardando"
+let pagamentoStatus="Arguadando"
+let estoqueDisponivel="Aguardando"
 
+if (estoque>=quantidade) {
+    statusPedido="Pedido disponível para finalização"
+    estoqueDisponivel= "Estoque Disponivel"
 } else{
-    console.log("Estoque Indisponivel")
+    statusPedido="Pedido não pode ser finalizado por falta de estoque"
+    estoqueDisponivel="Indisponível"
 }
-if (preco>=1000){
-    console.log("10%")
-    
+if (valorPago>=valorFinal) {
+    pagamentoStatus= "pagamento aprovado"
+    troco= (valorPago-valorFinal)
 } else{
-    console.log("0%")
+    pagamentoStatus= "Pagamento insuficiente"
+    troco= 0
 }
+const resumo= 
 module.exports = {
     cliente,
     produto,
