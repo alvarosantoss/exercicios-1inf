@@ -5,6 +5,7 @@ const quantidade= 2
 const estoque= 10
 const subtotal= preco*quantidade
 const valorPago= 9000
+const desconto="10%"
 let descontoPercentual= 0
 if (subtotal>=1000) {
     descontoPercentual= 10
@@ -31,7 +32,23 @@ if (valorPago>=valorFinal) {
     pagamentoStatus= "Pagamento insuficiente"
     troco= 0
 }
-const resumo= 
+
+const resumo= `cliente;${cliente}
+produto;${produto}
+preço;${preco}
+quantidade;${quantidade}
+subtotal;${subtotal}
+desconto;${desconto}
+valor do desconto;${valorDesconto}
+valor final;${valorFinal}
+situação do estoque;{estoqueDisponivel}
+valor pago;${valorPago}
+situação de pagamento;${pagamentoStatus}
+troco;${troco}
+situação do pedido;${statusPedido}`
+
+console.log(resumo)
+
 module.exports = {
     cliente,
     produto,
