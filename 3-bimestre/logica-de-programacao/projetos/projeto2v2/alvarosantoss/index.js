@@ -1,0 +1,22 @@
+const cliente= "Marina Silva"
+const produto="Monitor 24 polegadas"
+const preco= 800
+const quantidade= 2
+const estoque= 10
+const valorPago= 2000
+const subtotal= quantidade * preco
+
+
+
+if (estoque>=quantidade) {
+    console.log("Estoque Suficiente")
+}else{
+    console.log("Estoque insuficiente")
+}
+if (subtotal>=1000){
+    console.log("Frete gratis")
+}else{
+    console.log("Frete:R$30")
+}
+let frete= 0
+const valorFinal= subtotal + frete
