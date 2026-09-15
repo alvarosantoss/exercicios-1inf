@@ -18,5 +18,43 @@ if (subtotal>=1000){
 }else{
     console.log("Frete:R$30")
 }
+
 let frete= 0
 const valorFinal= subtotal + frete
+let pagamentoStatus="Aguardando"
+let statusCompra="Aguardando"
+
+if (valorPago>=valorFinal) {
+    console.log("Pagamento aprovado")
+} else{
+    console.log("Pagamento insuficiente")
+}
+
+const troco= valorPago-valorFinal
+
+const estoqueDisponivel= true
+const pagamento= true
+
+if (estoqueDisponivel&&pagamento){
+    console.log("Compra confirmada")
+}else{
+    
+}
+
+module.exports = {
+    cliente,
+    produto,
+    preco,
+    quantidade,
+    estoque,
+    valorPago,
+    subtotal,
+    estoqueDisponivel,
+    freteStatus,
+    valorFrete,
+    valorFinal,
+    pagamentoStatus,
+    troco,
+    statusCompra,
+    resumo
+}

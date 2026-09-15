@@ -15,7 +15,7 @@ const valorFinal=(subtotal-valorDesconto)
 
 let troco= "Aguardando"
 let statusPedido= "Aguardando"
-let pagamentoStatus="Arguadando"
+let pagamentoStatus="Aguardando"
 let estoqueDisponivel="Aguardando"
 
 if (estoque>=quantidade) {
