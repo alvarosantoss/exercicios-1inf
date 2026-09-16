@@ -39,15 +39,13 @@ let statusCompra
 if (estoqueDisponivel==="Estoque suficiente"&&pagamentoStatus==="Pagamento aprovado"){
     statusCompra="Compra confirmada"
 } 
-if (estoqueDisponivel==="Estoque suficiente"&&pagamento==="Pagamento insuficiente"){
-=======
+if (estoqueDisponivel==="Estoque suficiente"&&pagamentoStatus==="Pagamento insuficiente"){
 let statusCompra
-
+}
 if (estoqueDisponivel==="Estoque suficiente"&&pagamentoStatus==="Pagamento aprovado"){
     statusCompra="Compra confirmada"
 } 
 if (estoqueDisponivel==="Estoque suficiente"&&pagamentoStatus==="Pagamento insuficiente"){
->>>>>>> 92aaa3f (projeto finalizado)
     statusCompra="Compra pendente de pagamento"
 }
 if(estoqueDisponivel==="Estoque insuficiente"){
@@ -67,24 +65,24 @@ verificação do frete=;${freteStatus}
 valor final;${valorFinal}
 verificação de pagamento;${pagamentoStatus}
 troco;${troco}
+situação de compra;${statusCompra}
 `
 console.log(resumo)
 
-
 module.exports = {
-    cliente,
-    produto,
-    preco,
-    quantidade,
-    estoque,
-    valorPago,
-    subtotal,
-    estoqueDisponivel,
-    freteStatus,
-    valorFrete,
-    valorFinal,
-    pagamentoStatus,
-    troco,
-    statusCompra,
-    resumo
-}
+  cliente,
+  produto,
+  preco,
+  quantidade,
+  estoque,
+  valorPago,
+  subtotal,
+  estoqueDisponivel,
+  freteStatus,
+  valorFrete,
+  valorFinal,
+  pagamentoStatus,
+  troco,
+  statusCompra,
+  resumo
+};
