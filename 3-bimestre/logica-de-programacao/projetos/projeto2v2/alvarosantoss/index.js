@@ -36,7 +36,6 @@ if (valorPago>=valorFinal) {
 const troco= valorPago-valorFinal
 let statusCompra
 
-<<<<<<< HEAD
 if (estoqueDisponivel==="Estoque suficiente"&&pagamentoStatus==="Pagamento aprovado"){
     statusCompra="Compra confirmada"
 } 
@@ -64,19 +63,10 @@ valor pago;${valorPago}
 subtotal;${subtotal}
 verificação de estoque;${estoqueDisponivel}
 frete;${valorFrete}
-<<<<<<< HEAD
 verificação do frete=;${freteStatus}
-=======
-verificação do frete;${freteStatus}
->>>>>>> 92aaa3f (projeto finalizado)
 valor final;${valorFinal}
 verificação de pagamento;${pagamentoStatus}
 troco;${troco}
-situação de compra;${statusCompra}
-<<<<<<< HEAD
-=======
-situação do frete: ${freteStatus}
->>>>>>> 92aaa3f (projeto finalizado)
 `
 console.log(resumo)
 
