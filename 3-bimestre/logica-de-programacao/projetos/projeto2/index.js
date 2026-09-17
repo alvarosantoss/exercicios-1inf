@@ -1,9 +1,9 @@
 const cliente= "Lucas Almeida"
 const produto= "Notebook Gamer"
-const preco= 4.500
+const preco= 4500
 const quantidade= 2
 const estoque=10
-const valorPago=  9.000
+const valorPago=  9000
 const subtotal= quantidade*preco
 const desconto=10
 const valorDesconto= (subtotal * desconto)/ 100
