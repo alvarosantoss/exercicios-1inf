@@ -1,46 +1,50 @@
 const cliente= "Marina Alves"
-const opcaoDoCardapio= 4
+const opcaoMenu= 4
 const quantidade= 4
-const formaDePagamento= "Dinheiro"
+const formaPagamento= "dinheiro"
 
-let statusDoPedido= "Pendente"
-let prato= "tapioca"
-let valorDoPedido= 0
-let precoDoPrato= 0
+let statusPedido= "pendente"
+let prato= "Aguardando"
+let precoUnitario= 0
+let pagamentoMensagem= "Aguardando"
+let statusMensagem= "Aguardando"
 
-switch (opcaoDoCardapio){
-    case "acai-300ml":
-        console.log("Opção inválida")
-        precoDoPrato= 14
+switch (opcaoMenu){
+    case 1:
+        prato="Açai 300ml"
+        precoUnitario= 14
         break
-    case "acai-500":
-        console.log("Opção inválida")
-        precoDoPrato= 20
+    case 2:
+        prato="Açai 500ml"
+        precoUnitario= 20
         break
-    case "vitamina":
-        console.log("Opção inválida")
-        precoDoPrato= 12
+    case 3:
+        prato= "Vitamina"
+        precoUnitario= 12
         break
-    case "tapioca":
-        console.log("Opção inválida")
-        precoDoPrato= 10
+    case 4:
+        prato= "Tapioca"
+        precoUnitario= 10
         break
+    default:
+        prato= "Opção inválida"
+        precoUnitario= 0
 }
-const subtotal= precoDoPrato * quantidade
+const subtotal= precoUnitario * quantidade
 
-const freteStatus= subtotal >= 80 ? "frete grátis" : "frete pago"
+const freteStatus= subtotal >= 80 ? "Frete grátis" : "Frete pago"
 
 const frete= subtotal >= 80 ? 0 : 15
 
-switch (formaDePagamento){
+switch (formaPagamento){
     case "Pix":
-        console.log("Pagamento via Pix")
+        pagamentoMensagem=("Pagamento via Pix")
         break
     case "Cartão de crédito":
-        console.log("Pagamento via cartão de crédito")
+        pagamentoMensagem=("Pagamento via cartão de crédito")
         break    
-    case "Dinheiro":
-        console.log("Pagamento em dinheiro")
+    case "dinheiro":
+        pagamentoMensagem=("Pagamento em dinheiro")
         break
 }
 
@@ -60,33 +64,50 @@ switch(descontoPercentual){
 const desconto= subtotal * (descontoPercentual / 100)
 const total= subtotal - desconto + frete
 
-switch (statusDoPedido){
-    case "Pendente":
-        console.log("Aguardando pagamento")
+switch (statusPedido){
+    case "pendente":
+        statusMensagem= ("Aguardando pagamento")
         break
-    case "Aprovado":
-        console.log("Pedido em preparo")
+    case "aprovado":
+        statusMensagem= ("Pedido em preparo")
         break
-    case "Enviado":
-        console.log("Pedido a caminho")
+    case "enviado":
+        statusMensagem= ("Pedido a caminho")
         break
-    case "Cancelado":
-        console.log("Pedido cancelado")
+    case "cancelado":
+        statusMensagem= ("Pedido cancelado")
         break
     default:
-        console.log("Status desconhecido")
+        statusMensagem= ("Status desconhecido")
 }
 const resumo=`
-Resumo do pedido:
-Cliente: ${cliente}
-Item : ${prato} 
-Quantidade: ${quantidade}
-Subtotal: ${subtotal}
-
-
-
-
-
-
-
+cliente: ${cliente}
+item : ${prato} 
+quantidade: ${quantidade}
+subtotal: ${subtotal}
+situação do frete: ${freteStatus}
+mensagem da forma de pagamento: ${pagamentoMensagem}
+desconto: ${desconto}
+total: ${total}
+situação do pedido: ${statusMensagem}
 `
+console.log(resumo)
+
+module.exports = {
+    cliente,
+    opcaoMenu,
+    quantidade,
+    formaPagamento,
+    statusPedido,
+    prato,
+    precoUnitario,
+    subtotal,
+    freteStatus,
+    frete,
+    pagamentoMensagem,
+    descontoPercentual,
+    desconto,
+    total,
+    statusMensagem,
+    resumo
+}
