@@ -1,10 +1,11 @@
 const prompt = require("prompt-sync")()
 
-const vendasResgistradas = Number(prompt("Quantas vendas serão resgistradas? "))
+const vendasRegistradas = Number(prompt("Quantas vendas serão registradas? "))
 const vendas = []
 
-for (let i = 1; i <= vendasResgistradas; i++) {
-  vendas.push(Number(prompt(`Venda ${i}: `)))
+for (let i = 1; i <= vendasRegistradas; i++) {
+  const venda = Number(prompt(`Venda ${i}: `))
+  vendas.push(venda)
 }
 
 let menorVenda = vendas[0]
@@ -16,4 +17,4 @@ for (let i = 0; i < vendas.length; i++) {
 }
 
 console.log(menorVenda)
-module.exports= menorVenda
+module.exports = menorVenda
